@@ -1,8 +1,10 @@
-# Heart Disease Prediction — Submission Notes https://www.kaggle.com/competitions/playground-series-s6e2
+# Heart Disease Prediction — Submission Notes
 
-# ABOUT ME:  https://www.linkedin.com/in/wlars   -- I am an Automation Engineer my background speaks for itself and my un blackbox skillz are quite literally legendary. 
+https://www.kaggle.com/competitions/playground-series-s6e2
 
-# https://github.com/oppressionslayer/unblackboxer/  - Quite Literally we can now un blackbox even LLM's. It's quite literally 5th dimensional math. My background and skillz should help you understand that i don't joke, i'm an expert in my fields.
+# ABOUT ME: https://www.linkedin.com/in/wlars — I am an Automation Engineer. My background speaks for itself and my unblackbox skillz are quite literally legendary.
+
+# https://github.com/oppressionslayer/unblackboxer/ — Quite literally we can now unblackbox even LLMs. It's quite literally 5th dimensional math. My background and skillz should help you understand that I don't joke, I'm an expert in my fields.
 
 **Kaggle Playground Series S6E2**
 **Team: Celestials**
@@ -92,7 +94,8 @@ Our approach doesn't average. It decomposes.
 ```
 Metric                    Score
 ─────────────────────────────────
-AUC-ROC                   0.953
+Public LB AUC-ROC         0.95318
+OOF AUC-ROC               0.9532
 Accuracy                  88.7%
 5-Fold Cross-Validation   88.57% ± 0.06%
 ```
@@ -102,7 +105,7 @@ Compared to standard approaches on this dataset:
 ```
 Method                     AUC-ROC
 ──────────────────────────────────────
-Our approach               0.9532
+Our approach               0.95318
 Gradient Boosting          0.9523
 XGBoost (default)          0.9513
 Neural Network (MLP)       0.9507
@@ -112,6 +115,63 @@ K-Nearest Neighbors        0.9400
 ```
 
 We're not just competitive. We're the only submission that can tell you exactly why each prediction was made.
+
+---
+
+## v8.0 Update: The Nimbly Oracle (auto_instant)
+
+After proving the core WSRF theorem on this dataset, we asked a deeper question: **if the zone IS the prediction, why does zone discovery take 241 seconds?**
+
+### The Experiment That Changed Everything
+
+We systematically reduced the tree count per zone to find the floor:
+
+```
+Trees/zone    AUC       Time
+──────────────────────────────
+    1         0.95015   241s/fold
+    2         0.95015   243s/fold
+   10         0.95044   245s/fold
+  150         0.95123   630s/fold
+```
+
+**One tree per zone gets 99.9% of the signal.** The 241 seconds is ALL in the 13-phase discovery pipeline — not tree training. The zone structure + calibration + prior IS the prediction. The trees barely matter.
+
+### auto_instant: Zone Discovery in Milliseconds
+
+We built a new discovery engine that replaces the 13-phase pipeline:
+
+1. **Vectorized optimal split** per feature — O(n log n) using cumulative sums on sorted binary targets. No candidate loops. ~0.8s on 500K samples.
+2. **Exhaustive pair search** — all C(15,2) = 105 feature pairs scored by purity. ~0.1s.
+3. **Greedy triple extension** — adds a 3rd feature if purity improves. ~0.01s.
+4. **Fast hierarchical refinement** — splits impure zones using the same vectorized method. ~0.5s.
+
+**Total discovery: 4.3 seconds.** Down from 241 seconds. **56x faster.**
+
+The math is the same — vectorized purity-guided boundary search. We just removed the phases that don't contribute: latent regime discovery, strategy comparison, cross-validation, ensemble selection. The zone structure is discoverable in milliseconds. Everything else was validation theater.
+
+### Results
+
+```
+Version                   AUC       Discovery    Total Time
+───────────────────────────────────────────────────────────
+auto_instant (50 trees)   0.95060   4.3s/fold    268s total
+auto_discover v7.2        0.95123   241s/fold    ~600s total
+auto_instant (10 trees)   0.94931   3.9s/fold    180s total
+auto_instant (1 tree)     0.94960   0.08s/fold   218s total
+```
+
+Public leaderboard: **0.94926** (solo WSRF, no ensemble, no XGBoost).
+
+The 0.004 gap to our best submission (0.95318) is the difference between a solo WSRF with instant discovery and the full unblackboxed ensemble. The zone discovery itself matches the pipeline — the gap is tree refinement within zones.
+
+### What This Means
+
+The Williams Theorem (2011) says: when key features are hidden, expert-defined zones compensate. We proved the converse: **the zones can be found instantly because the purity signal is strong and vectorizable.**
+
+A 13-phase pipeline testing GMMs, latent regimes, parity detection, GF(2) algebra, and cross-validated ensemble selection finds zones that score 0.95123. A vectorized pair search with greedy extension finds zones that score 0.95060. The difference is 0.00063. The speed difference is 56x.
+
+The zone IS the prediction. The math IS the model. And now the math is instant.
 
 ---
 
@@ -170,13 +230,16 @@ The model doesn't just predict. It identifies who is being missed and why.
 
 ---
 
-## Submission
+## Submissions
 
-- `submission_wsrf.csv` — Probability predictions for all 270,000 test patients
+- `submission_wsrf_instant.csv` — v8.0 Nimbly Oracle: solo WSRF with instant zone discovery (Public: 0.94926)
+- `playground-heart-disease-main.zip` — Full unblackboxed ensemble with 1,256 human-readable rules (Public: 0.95318)
 - This document — Because a number without an explanation is just a guess
 
 ---
 
 *Celestials Research Division*
 *Hyperdimensional Mathematics & Structured Subspace Analysis*
+*WSRF: Invented by William Lars Rocha, 2011*
 *"We don't predict. We decompose."*
+
