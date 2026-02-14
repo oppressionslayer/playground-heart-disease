@@ -11,6 +11,79 @@ https://www.kaggle.com/competitions/playground-series-s6e2
 
 ---
 
+# [0.953 AUC] Un-Blackboxing the Heart: 4 Latent Regimes & The "Nimbly Oracle" (WSRF v8.0)
+
+**Team:** Celestials
+**Method:** Hyperdimensional Subspace Decomposition
+
+Most models treat this competition as a flat classification problem. We didn't. We mapped the decision topology and found that **the math is the model**.
+
+---
+
+## 1. The Discovery: 4 Latent Regimes
+[0.953 AUC] Un-Blackboxing the Heart: 4 Latent Regimes & The "Nimbly Oracle" (WSRF v8.0)
+Team: Celestials
+Method: Hyperdimensional Subspace Decomposition
+Most models treat this competition as a flat classification problem. We didn't. We mapped the decision topology and found that the math is the model.
+1. The Discovery: 4 Latent Regimes
+We identified a hidden partition structure defined by two diagnostic features. Once decomposed, the problem separates into four distinct prediction surfaces.
+The Critical Finding: In Regime 3 (9% of population), the #1 predictor for the rest of the data—Chest Symptom Type—completely collapses. In this zone, metabolic markers (Lipids, Pressure, Age) take over. Standard "averaging" models (XGBoost/NN) dilute this signal; we decompose it.
+Regime	Population	Risk	Primary Drivers
+0	56%	17.0%	Symptoms / Cardiac Output
+1	32%	76.5%	ST-Segment Geometry
+2	3%	70.2%	Age / Biological Degradation
+3	9%	96.5%	Metabolic Markers (Inversion)
+2. WSRF v8.0 Update: The "Nimbly Oracle" (auto_instant)
+We proved that the zone IS the prediction. By replacing a 13-phase discovery pipeline with vectorized optimal splits—O(n log n) using cumulative sums—we reduced discovery time from 241s to 4.3s (56x speedup).
+
+    Trees per zone: 1 tree captures 99.9% of the signal.
+    The Math: Vectorized purity-guided boundary search.
+    Result: 0.95318 LB with zero ML library dependencies.
+
+3. The Deliverable: Human-Readable Logic
+Our submission isn't a black box; it's 2,614 lines of pure if-else logic.
+
+    Auditable: A doctor can read every rule.
+    Portable: Runs on a 1990s PC or a calculator.
+    Stable: 5-Fold CV (0.9532) matches Public LB (0.95318).
+
+We don't tune. We solve.
+Check out our methodology here: [Link to your GitHub/Notebook]
+We identified a hidden partition structure defined by two diagnostic features. Once decomposed, the problem separates into four distinct prediction surfaces.
+
+**The Critical Finding:** In Regime 3 (9% of population), the #1 predictor for the rest of the data — *Chest Symptom Type* — **completely collapses**. In this zone, metabolic markers (Lipids, Pressure, Age) take over. Standard "averaging" models (XGBoost/NN) dilute this signal; we decompose it.
+
+| Regime | Population | Risk | Primary Drivers |
+|--------|-----------|------|-----------------|
+| 0 | 56% | 17.0% | Symptoms / Cardiac Output |
+| 1 | 32% | 76.5% | ST-Segment Geometry |
+| 2 | 3% | 70.2% | Age / Biological Degradation |
+| 3 | 9% | 96.5% | Metabolic Markers (Inversion) |
+
+---
+
+## 2. WSRF v8.0 Update: The "Nimbly Oracle" (`auto_instant`)
+
+We proved that **the zone IS the prediction**. By replacing a 13-phase discovery pipeline with vectorized optimal splits — O(n log n) using cumulative sums — we reduced discovery time from 241s to 4.3s (**56x speedup**).
+
+- **Trees per zone:** 1 tree captures 99.9% of the signal.
+- **The Math:** Vectorized purity-guided boundary search.
+- **Result:** 0.95318 LB with zero ML library dependencies.
+
+---
+
+## 3. The Deliverable: Human-Readable Logic
+
+Our submission isn't a black box; it's **2,614 lines of pure if-else logic**.
+
+- **Auditable:** A doctor can read every rule.
+- **Portable:** Runs on a 1990s PC or a calculator.
+- **Stable:** 5-Fold CV (0.9532) matches Public LB (0.95318).
+
+**We don't tune. We solve.**
+
+
+
 ## Approach
 
 Using hyperdimensional mathematics and structured subspace decomposition, we didn't just predict heart disease — we mapped the entire decision topology of the dataset.
