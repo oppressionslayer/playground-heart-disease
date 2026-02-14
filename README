@@ -1,1 +1,1029 @@
-Forrrrrrrrrrrrrrrrrrrrrrr https://www.kaggle.com/competitions/playground-series-s6e2/overview
+## Forrrrrrrrrrrrrrrrrrrrrrr https://www.kaggle.com/competitions/playground-series-s6e2/overview
+
+# Hyperdimensional Subspace Decomposition — Heart Disease Prediction Unblackboxed
+
+## Approach
+
+Instead of treating this as a flat classification problem, I used hyperdimensional mathematics to decompose the patient population into 4 latent regimes hiding inside the data. Each regime has a fundamentally different risk profile and requires its own specialized prediction logic.
+
+The result: **AUC-ROC 0.953** with every single prediction fully explainable through human-readable if/then rules. No black boxes.
+
+## What I Found
+
+The dataset contains a hidden 4-zone partition defined by two diagnostic features acting as regime selectors:
+
+| Regime | Patients | Heart Disease Rate | Primary Drivers |
+|--------|----------|-------------------|-----------------|
+| Standard | 352,546 (56%) | 17.0% | Chest pain type, Max HR |
+| High Thallium | 200,294 (32%) | 76.5% | ST slope, ST depression |
+| High Vessel | 19,740 (3%) | 70.2% | Age, ST depression |
+| Metabolic | 57,420 (9%) | **96.5%** | Cholesterol, BP, Age |
+
+## The Critical Finding
+
+In the Metabolic regime (9% of patients), chest pain type — the #1 predictor for 87% of the population — drops to #5. The risk becomes metabolic: cholesterol, blood pressure, and age take over. Standard models that average across all patients wash this signal out entirely.
+
+These patients have a 96.5% heart disease rate but present with a completely different risk topology than the majority population. A flat model will never see this.
+
+## The Deliverable
+
+- 1,256 human-readable decision rules across 4 regimes
+- 2,614 lines of standalone if-else prediction code (zero ML dependencies)
+- Full regime analysis with feature importance shifts
+- A prediction system a doctor could actually read and audit
+
+## Full Code & Analysis
+
+Everything is open source — the full pipeline, the unblackboxed rules, the standalone prediction code, and the showdown against standard models (XGBoost, Random Forest, Gradient Boosting, Neural Nets, etc.):
+
+**GitHub: https://github.com/oppressionslayer/playground-heart-disease**
+
+We don't predict. We decompose.# Hyperdimensional Subspace Decomposition — Heart Disease Prediction Unblackboxed
+
+## Approach
+
+Instead of treating this as a flat classification problem, I used hyperdimensional mathematics to decompose the patient population into 4 latent regimes hiding inside the data. Each regime has a fundamentally different risk profile and requires its own specialized prediction logic.
+
+The result: **AUC-ROC 0.953** with every single prediction fully explainable through human-readable if/then rules. No black boxes.
+
+## What I Found
+
+The dataset contains a hidden 4-zone partition defined by two diagnostic features acting as regime selectors:
+
+| Regime | Patients | Heart Disease Rate | Primary Drivers |
+|--------|----------|-------------------|-----------------|
+| Standard | 352,546 (56%) | 17.0% | Chest pain type, Max HR |
+| High Thallium | 200,294 (32%) | 76.5% | ST slope, ST depression |
+| High Vessel | 19,740 (3%) | 70.2% | Age, ST depression |
+| Metabolic | 57,420 (9%) | **96.5%** | Cholesterol, BP, Age |
+
+## The Critical Finding
+
+In the Metabolic regime (9% of patients), chest pain type — the #1 predictor for 87% of the population — drops to #5. The risk becomes metabolic: cholesterol, blood pressure, and age take over. Standard models that average across all patients wash this signal out entirely.
+
+These patients have a 96.5% heart disease rate but present with a completely different risk topology than the majority population. A flat model will never see this.
+
+## The Deliverable
+
+- 1,256 human-readable decision rules across 4 regimes
+- 2,614 lines of standalone if-else prediction code (zero ML dependencies)
+- Full regime analysis with feature importance shifts
+- A prediction system a doctor could actually read and audit
+
+## Full Code & Analysis
+
+Everything is open source — the full pipeline, the unblackboxed rules, the standalone prediction code, and the showdown against standard models (XGBoost, Random Forest, Gradient Boosting, Neural Nets, etc.):
+
+**GitHub: https://github.com/oppressionslayer/playground-heart-disease**
+
+We don't predict. We decompose.# Hyperdimensional Subspace Decomposition — Heart Disease Prediction Unblackboxed
+
+## Approach
+
+Instead of treating this as a flat classification problem, I used hyperdimensional mathematics to decompose the patient population into 4 latent regimes hiding inside the data. Each regime has a fundamentally different risk profile and requires its own specialized prediction logic.
+
+The result: **AUC-ROC 0.953** with every single prediction fully explainable through human-readable if/then rules. No black boxes.
+
+## What I Found
+
+The dataset contains a hidden 4-zone partition defined by two diagnostic features acting as regime selectors:
+
+| Regime | Patients | Heart Disease Rate | Primary Drivers |
+|--------|----------|-------------------|-----------------|
+| Standard | 352,546 (56%) | 17.0% | Chest pain type, Max HR |
+| High Thallium | 200,294 (32%) | 76.5% | ST slope, ST depression |
+| High Vessel | 19,740 (3%) | 70.2% | Age, ST depression |
+| Metabolic | 57,420 (9%) | **96.5%** | Cholesterol, BP, Age |
+
+## The Critical Finding
+
+In the Metabolic regime (9% of patients), chest pain type — the #1 predictor for 87% of the population — drops to #5. The risk becomes metabolic: cholesterol, blood pressure, and age take over. Standard models that average across all patients wash this signal out entirely.
+
+These patients have a 96.5% heart disease rate but present with a completely different risk topology than the majority population. A flat model will never see this.
+
+## The Deliverable
+
+- 1,256 human-readable decision rules across 4 regimes
+- 2,614 lines of standalone if-else prediction code (zero ML dependencies)
+- Full regime analysis with feature importance shifts
+- A prediction system a doctor could actually read and audit
+
+## Full Code & Analysis
+
+Everything is open source — the full pipeline, the unblackboxed rules, the standalone prediction code, and the showdown against standard models (XGBoost, Random Forest, Gradient Boosting, Neural Nets, etc.):
+
+**GitHub: https://github.com/oppressionslayer/playground-heart-disease**
+
+We don't predict. We decompose.# Hyperdimensional Subspace Decomposition — Heart Disease Prediction Unblackboxed
+
+## Approach
+
+Instead of treating this as a flat classification problem, I used hyperdimensional mathematics to decompose the patient population into 4 latent regimes hiding inside the data. Each regime has a fundamentally different risk profile and requires its own specialized prediction logic.
+
+The result: **AUC-ROC 0.953** with every single prediction fully explainable through human-readable if/then rules. No black boxes.
+
+## What I Found
+
+The dataset contains a hidden 4-zone partition defined by two diagnostic features acting as regime selectors:
+
+| Regime | Patients | Heart Disease Rate | Primary Drivers |
+|--------|----------|-------------------|-----------------|
+| Standard | 352,546 (56%) | 17.0% | Chest pain type, Max HR |
+| High Thallium | 200,294 (32%) | 76.5% | ST slope, ST depression |
+| High Vessel | 19,740 (3%) | 70.2% | Age, ST depression |
+| Metabolic | 57,420 (9%) | **96.5%** | Cholesterol, BP, Age |
+
+## The Critical Finding
+
+In the Metabolic regime (9% of patients), chest pain type — the #1 predictor for 87% of the population — drops to #5. The risk becomes metabolic: cholesterol, blood pressure, and age take over. Standard models that average across all patients wash this signal out entirely.
+
+These patients have a 96.5% heart disease rate but present with a completely different risk topology than the majority population. A flat model will never see this.
+
+## The Deliverable
+
+- 1,256 human-readable decision rules across 4 regimes
+- 2,614 lines of standalone if-else prediction code (zero ML dependencies)
+- Full regime analysis with feature importance shifts
+- A prediction system a doctor could actually read and audit
+
+## Full Code & Analysis
+
+Everything is open source — the full pipeline, the unblackboxed rules, the standalone prediction code, and the showdown against standard models (XGBoost, Random Forest, Gradient Boosting, Neural Nets, etc.):
+
+**GitHub: https://github.com/oppressionslayer/playground-heart-disease**
+
+We don't predict. We decompose.# Hyperdimensional Subspace Decomposition — Heart Disease Prediction Unblackboxed
+
+## Approach
+
+Instead of treating this as a flat classification problem, I used hyperdimensional mathematics to decompose the patient population into 4 latent regimes hiding inside the data. Each regime has a fundamentally different risk profile and requires its own specialized prediction logic.
+
+The result: **AUC-ROC 0.953** with every single prediction fully explainable through human-readable if/then rules. No black boxes.
+
+## What I Found
+
+The dataset contains a hidden 4-zone partition defined by two diagnostic features acting as regime selectors:
+
+| Regime | Patients | Heart Disease Rate | Primary Drivers |
+|--------|----------|-------------------|-----------------|
+| Standard | 352,546 (56%) | 17.0% | Chest pain type, Max HR |
+| High Thallium | 200,294 (32%) | 76.5% | ST slope, ST depression |
+| High Vessel | 19,740 (3%) | 70.2% | Age, ST depression |
+| Metabolic | 57,420 (9%) | **96.5%** | Cholesterol, BP, Age |
+
+## The Critical Finding
+
+In the Metabolic regime (9% of patients), chest pain type — the #1 predictor for 87% of the population — drops to #5. The risk becomes metabolic: cholesterol, blood pressure, and age take over. Standard models that average across all patients wash this signal out entirely.
+
+These patients have a 96.5% heart disease rate but present with a completely different risk topology than the majority population. A flat model will never see this.
+
+## The Deliverable
+
+- 1,256 human-readable decision rules across 4 regimes
+- 2,614 lines of standalone if-else prediction code (zero ML dependencies)
+- Full regime analysis with feature importance shifts
+- A prediction system a doctor could actually read and audit
+
+## Full Code & Analysis
+
+Everything is open source — the full pipeline, the unblackboxed rules, the standalone prediction code, and the showdown against standard models (XGBoost, Random Forest, Gradient Boosting, Neural Nets, etc.):
+
+**GitHub: https://github.com/oppressionslayer/playground-heart-disease**
+
+We don't predict. We decompose.# Hyperdimensional Subspace Decomposition — Heart Disease Prediction Unblackboxed
+
+## Approach
+
+Instead of treating this as a flat classification problem, I used hyperdimensional mathematics to decompose the patient population into 4 latent regimes hiding inside the data. Each regime has a fundamentally different risk profile and requires its own specialized prediction logic.
+
+The result: **AUC-ROC 0.953** with every single prediction fully explainable through human-readable if/then rules. No black boxes.
+
+## What I Found
+
+The dataset contains a hidden 4-zone partition defined by two diagnostic features acting as regime selectors:
+
+| Regime | Patients | Heart Disease Rate | Primary Drivers |
+|--------|----------|-------------------|-----------------|
+| Standard | 352,546 (56%) | 17.0% | Chest pain type, Max HR |
+| High Thallium | 200,294 (32%) | 76.5% | ST slope, ST depression |
+| High Vessel | 19,740 (3%) | 70.2% | Age, ST depression |
+| Metabolic | 57,420 (9%) | **96.5%** | Cholesterol, BP, Age |
+
+## The Critical Finding
+
+In the Metabolic regime (9% of patients), chest pain type — the #1 predictor for 87% of the population — drops to #5. The risk becomes metabolic: cholesterol, blood pressure, and age take over. Standard models that average across all patients wash this signal out entirely.
+
+These patients have a 96.5% heart disease rate but present with a completely different risk topology than the majority population. A flat model will never see this.
+
+## The Deliverable
+
+- 1,256 human-readable decision rules across 4 regimes
+- 2,614 lines of standalone if-else prediction code (zero ML dependencies)
+- Full regime analysis with feature importance shifts
+- A prediction system a doctor could actually read and audit
+
+## Full Code & Analysis
+
+Everything is open source — the full pipeline, the unblackboxed rules, the standalone prediction code, and the showdown against standard models (XGBoost, Random Forest, Gradient Boosting, Neural Nets, etc.):
+
+**GitHub: https://github.com/oppressionslayer/playground-heart-disease**
+
+We don't predict. We decompose.# Hyperdimensional Subspace Decomposition — Heart Disease Prediction Unblackboxed
+
+## Approach
+
+Instead of treating this as a flat classification problem, I used hyperdimensional mathematics to decompose the patient population into 4 latent regimes hiding inside the data. Each regime has a fundamentally different risk profile and requires its own specialized prediction logic.
+
+The result: **AUC-ROC 0.953** with every single prediction fully explainable through human-readable if/then rules. No black boxes.
+
+## What I Found
+
+The dataset contains a hidden 4-zone partition defined by two diagnostic features acting as regime selectors:
+
+| Regime | Patients | Heart Disease Rate | Primary Drivers |
+|--------|----------|-------------------|-----------------|
+| Standard | 352,546 (56%) | 17.0% | Chest pain type, Max HR |
+| High Thallium | 200,294 (32%) | 76.5% | ST slope, ST depression |
+| High Vessel | 19,740 (3%) | 70.2% | Age, ST depression |
+| Metabolic | 57,420 (9%) | **96.5%** | Cholesterol, BP, Age |
+
+## The Critical Finding
+
+In the Metabolic regime (9% of patients), chest pain type — the #1 predictor for 87% of the population — drops to #5. The risk becomes metabolic: cholesterol, blood pressure, and age take over. Standard models that average across all patients wash this signal out entirely.
+
+These patients have a 96.5% heart disease rate but present with a completely different risk topology than the majority population. A flat model will never see this.
+
+## The Deliverable
+
+- 1,256 human-readable decision rules across 4 regimes
+- 2,614 lines of standalone if-else prediction code (zero ML dependencies)
+- Full regime analysis with feature importance shifts
+- A prediction system a doctor could actually read and audit
+
+## Full Code & Analysis
+
+Everything is open source — the full pipeline, the unblackboxed rules, the standalone prediction code, and the showdown against standard models (XGBoost, Random Forest, Gradient Boosting, Neural Nets, etc.):
+
+**GitHub: https://github.com/oppressionslayer/playground-heart-disease**
+
+We don't predict. We decompose.# Hyperdimensional Subspace Decomposition — Heart Disease Prediction Unblackboxed
+
+## Approach
+
+Instead of treating this as a flat classification problem, I used hyperdimensional mathematics to decompose the patient population into 4 latent regimes hiding inside the data. Each regime has a fundamentally different risk profile and requires its own specialized prediction logic.
+
+The result: **AUC-ROC 0.953** with every single prediction fully explainable through human-readable if/then rules. No black boxes.
+
+## What I Found
+
+The dataset contains a hidden 4-zone partition defined by two diagnostic features acting as regime selectors:
+
+| Regime | Patients | Heart Disease Rate | Primary Drivers |
+|--------|----------|-------------------|-----------------|
+| Standard | 352,546 (56%) | 17.0% | Chest pain type, Max HR |
+| High Thallium | 200,294 (32%) | 76.5% | ST slope, ST depression |
+| High Vessel | 19,740 (3%) | 70.2% | Age, ST depression |
+| Metabolic | 57,420 (9%) | **96.5%** | Cholesterol, BP, Age |
+
+## The Critical Finding
+
+In the Metabolic regime (9% of patients), chest pain type — the #1 predictor for 87% of the population — drops to #5. The risk becomes metabolic: cholesterol, blood pressure, and age take over. Standard models that average across all patients wash this signal out entirely.
+
+These patients have a 96.5% heart disease rate but present with a completely different risk topology than the majority population. A flat model will never see this.
+
+## The Deliverable
+
+- 1,256 human-readable decision rules across 4 regimes
+- 2,614 lines of standalone if-else prediction code (zero ML dependencies)
+- Full regime analysis with feature importance shifts
+- A prediction system a doctor could actually read and audit
+
+## Full Code & Analysis
+
+Everything is open source — the full pipeline, the unblackboxed rules, the standalone prediction code, and the showdown against standard models (XGBoost, Random Forest, Gradient Boosting, Neural Nets, etc.):
+
+**GitHub: https://github.com/oppressionslayer/playground-heart-disease**
+
+We don't predict. We decompose.# Hyperdimensional Subspace Decomposition — Heart Disease Prediction Unblackboxed
+
+## Approach
+
+Instead of treating this as a flat classification problem, I used hyperdimensional mathematics to decompose the patient population into 4 latent regimes hiding inside the data. Each regime has a fundamentally different risk profile and requires its own specialized prediction logic.
+
+The result: **AUC-ROC 0.953** with every single prediction fully explainable through human-readable if/then rules. No black boxes.
+
+## What I Found
+
+The dataset contains a hidden 4-zone partition defined by two diagnostic features acting as regime selectors:
+
+| Regime | Patients | Heart Disease Rate | Primary Drivers |
+|--------|----------|-------------------|-----------------|
+| Standard | 352,546 (56%) | 17.0% | Chest pain type, Max HR |
+| High Thallium | 200,294 (32%) | 76.5% | ST slope, ST depression |
+| High Vessel | 19,740 (3%) | 70.2% | Age, ST depression |
+| Metabolic | 57,420 (9%) | **96.5%** | Cholesterol, BP, Age |
+
+## The Critical Finding
+
+In the Metabolic regime (9% of patients), chest pain type — the #1 predictor for 87% of the population — drops to #5. The risk becomes metabolic: cholesterol, blood pressure, and age take over. Standard models that average across all patients wash this signal out entirely.
+
+These patients have a 96.5% heart disease rate but present with a completely different risk topology than the majority population. A flat model will never see this.
+
+## The Deliverable
+
+- 1,256 human-readable decision rules across 4 regimes
+- 2,614 lines of standalone if-else prediction code (zero ML dependencies)
+- Full regime analysis with feature importance shifts
+- A prediction system a doctor could actually read and audit
+
+## Full Code & Analysis
+
+Everything is open source — the full pipeline, the unblackboxed rules, the standalone prediction code, and the showdown against standard models (XGBoost, Random Forest, Gradient Boosting, Neural Nets, etc.):
+
+**GitHub: https://github.com/oppressionslayer/playground-heart-disease**
+
+We don't predict. We decompose.# Hyperdimensional Subspace Decomposition — Heart Disease Prediction Unblackboxed
+
+## Approach
+
+Instead of treating this as a flat classification problem, I used hyperdimensional mathematics to decompose the patient population into 4 latent regimes hiding inside the data. Each regime has a fundamentally different risk profile and requires its own specialized prediction logic.
+
+The result: **AUC-ROC 0.953** with every single prediction fully explainable through human-readable if/then rules. No black boxes.
+
+## What I Found
+
+The dataset contains a hidden 4-zone partition defined by two diagnostic features acting as regime selectors:
+
+| Regime | Patients | Heart Disease Rate | Primary Drivers |
+|--------|----------|-------------------|-----------------|
+| Standard | 352,546 (56%) | 17.0% | Chest pain type, Max HR |
+| High Thallium | 200,294 (32%) | 76.5% | ST slope, ST depression |
+| High Vessel | 19,740 (3%) | 70.2% | Age, ST depression |
+| Metabolic | 57,420 (9%) | **96.5%** | Cholesterol, BP, Age |
+
+## The Critical Finding
+
+In the Metabolic regime (9% of patients), chest pain type — the #1 predictor for 87% of the population — drops to #5. The risk becomes metabolic: cholesterol, blood pressure, and age take over. Standard models that average across all patients wash this signal out entirely.
+
+These patients have a 96.5% heart disease rate but present with a completely different risk topology than the majority population. A flat model will never see this.
+
+## The Deliverable
+
+- 1,256 human-readable decision rules across 4 regimes
+- 2,614 lines of standalone if-else prediction code (zero ML dependencies)
+- Full regime analysis with feature importance shifts
+- A prediction system a doctor could actually read and audit
+
+## Full Code & Analysis
+
+Everything is open source — the full pipeline, the unblackboxed rules, the standalone prediction code, and the showdown against standard models (XGBoost, Random Forest, Gradient Boosting, Neural Nets, etc.):
+
+**GitHub: https://github.com/oppressionslayer/playground-heart-disease**
+
+We don't predict. We decompose.# Hyperdimensional Subspace Decomposition — Heart Disease Prediction Unblackboxed
+
+## Approach
+
+Instead of treating this as a flat classification problem, I used hyperdimensional mathematics to decompose the patient population into 4 latent regimes hiding inside the data. Each regime has a fundamentally different risk profile and requires its own specialized prediction logic.
+
+The result: **AUC-ROC 0.953** with every single prediction fully explainable through human-readable if/then rules. No black boxes.
+
+## What I Found
+
+The dataset contains a hidden 4-zone partition defined by two diagnostic features acting as regime selectors:
+
+| Regime | Patients | Heart Disease Rate | Primary Drivers |
+|--------|----------|-------------------|-----------------|
+| Standard | 352,546 (56%) | 17.0% | Chest pain type, Max HR |
+| High Thallium | 200,294 (32%) | 76.5% | ST slope, ST depression |
+| High Vessel | 19,740 (3%) | 70.2% | Age, ST depression |
+| Metabolic | 57,420 (9%) | **96.5%** | Cholesterol, BP, Age |
+
+## The Critical Finding
+
+In the Metabolic regime (9% of patients), chest pain type — the #1 predictor for 87% of the population — drops to #5. The risk becomes metabolic: cholesterol, blood pressure, and age take over. Standard models that average across all patients wash this signal out entirely.
+
+These patients have a 96.5% heart disease rate but present with a completely different risk topology than the majority population. A flat model will never see this.
+
+## The Deliverable
+
+- 1,256 human-readable decision rules across 4 regimes
+- 2,614 lines of standalone if-else prediction code (zero ML dependencies)
+- Full regime analysis with feature importance shifts
+- A prediction system a doctor could actually read and audit
+
+## Full Code & Analysis
+
+Everything is open source — the full pipeline, the unblackboxed rules, the standalone prediction code, and the showdown against standard models (XGBoost, Random Forest, Gradient Boosting, Neural Nets, etc.):
+
+**GitHub: https://github.com/oppressionslayer/playground-heart-disease**
+
+We don't predict. We decompose.# Hyperdimensional Subspace Decomposition — Heart Disease Prediction Unblackboxed
+
+## Approach
+
+Instead of treating this as a flat classification problem, I used hyperdimensional mathematics to decompose the patient population into 4 latent regimes hiding inside the data. Each regime has a fundamentally different risk profile and requires its own specialized prediction logic.
+
+The result: **AUC-ROC 0.953** with every single prediction fully explainable through human-readable if/then rules. No black boxes.
+
+## What I Found
+
+The dataset contains a hidden 4-zone partition defined by two diagnostic features acting as regime selectors:
+
+| Regime | Patients | Heart Disease Rate | Primary Drivers |
+|--------|----------|-------------------|-----------------|
+| Standard | 352,546 (56%) | 17.0% | Chest pain type, Max HR |
+| High Thallium | 200,294 (32%) | 76.5% | ST slope, ST depression |
+| High Vessel | 19,740 (3%) | 70.2% | Age, ST depression |
+| Metabolic | 57,420 (9%) | **96.5%** | Cholesterol, BP, Age |
+
+## The Critical Finding
+
+In the Metabolic regime (9% of patients), chest pain type — the #1 predictor for 87% of the population — drops to #5. The risk becomes metabolic: cholesterol, blood pressure, and age take over. Standard models that average across all patients wash this signal out entirely.
+
+These patients have a 96.5% heart disease rate but present with a completely different risk topology than the majority population. A flat model will never see this.
+
+## The Deliverable
+
+- 1,256 human-readable decision rules across 4 regimes
+- 2,614 lines of standalone if-else prediction code (zero ML dependencies)
+- Full regime analysis with feature importance shifts
+- A prediction system a doctor could actually read and audit
+
+## Full Code & Analysis
+
+Everything is open source — the full pipeline, the unblackboxed rules, the standalone prediction code, and the showdown against standard models (XGBoost, Random Forest, Gradient Boosting, Neural Nets, etc.):
+
+**GitHub: https://github.com/oppressionslayer/playground-heart-disease**
+
+We don't predict. We decompose.# Hyperdimensional Subspace Decomposition — Heart Disease Prediction Unblackboxed
+
+## Approach
+
+Instead of treating this as a flat classification problem, I used hyperdimensional mathematics to decompose the patient population into 4 latent regimes hiding inside the data. Each regime has a fundamentally different risk profile and requires its own specialized prediction logic.
+
+The result: **AUC-ROC 0.953** with every single prediction fully explainable through human-readable if/then rules. No black boxes.
+
+## What I Found
+
+The dataset contains a hidden 4-zone partition defined by two diagnostic features acting as regime selectors:
+
+| Regime | Patients | Heart Disease Rate | Primary Drivers |
+|--------|----------|-------------------|-----------------|
+| Standard | 352,546 (56%) | 17.0% | Chest pain type, Max HR |
+| High Thallium | 200,294 (32%) | 76.5% | ST slope, ST depression |
+| High Vessel | 19,740 (3%) | 70.2% | Age, ST depression |
+| Metabolic | 57,420 (9%) | **96.5%** | Cholesterol, BP, Age |
+
+## The Critical Finding
+
+In the Metabolic regime (9% of patients), chest pain type — the #1 predictor for 87% of the population — drops to #5. The risk becomes metabolic: cholesterol, blood pressure, and age take over. Standard models that average across all patients wash this signal out entirely.
+
+These patients have a 96.5% heart disease rate but present with a completely different risk topology than the majority population. A flat model will never see this.
+
+## The Deliverable
+
+- 1,256 human-readable decision rules across 4 regimes
+- 2,614 lines of standalone if-else prediction code (zero ML dependencies)
+- Full regime analysis with feature importance shifts
+- A prediction system a doctor could actually read and audit
+
+## Full Code & Analysis
+
+Everything is open source — the full pipeline, the unblackboxed rules, the standalone prediction code, and the showdown against standard models (XGBoost, Random Forest, Gradient Boosting, Neural Nets, etc.):
+
+**GitHub: https://github.com/oppressionslayer/playground-heart-disease**
+
+We don't predict. We decompose.# Hyperdimensional Subspace Decomposition — Heart Disease Prediction Unblackboxed
+
+## Approach
+
+Instead of treating this as a flat classification problem, I used hyperdimensional mathematics to decompose the patient population into 4 latent regimes hiding inside the data. Each regime has a fundamentally different risk profile and requires its own specialized prediction logic.
+
+The result: **AUC-ROC 0.953** with every single prediction fully explainable through human-readable if/then rules. No black boxes.
+
+## What I Found
+
+The dataset contains a hidden 4-zone partition defined by two diagnostic features acting as regime selectors:
+
+| Regime | Patients | Heart Disease Rate | Primary Drivers |
+|--------|----------|-------------------|-----------------|
+| Standard | 352,546 (56%) | 17.0% | Chest pain type, Max HR |
+| High Thallium | 200,294 (32%) | 76.5% | ST slope, ST depression |
+| High Vessel | 19,740 (3%) | 70.2% | Age, ST depression |
+| Metabolic | 57,420 (9%) | **96.5%** | Cholesterol, BP, Age |
+
+## The Critical Finding
+
+In the Metabolic regime (9% of patients), chest pain type — the #1 predictor for 87% of the population — drops to #5. The risk becomes metabolic: cholesterol, blood pressure, and age take over. Standard models that average across all patients wash this signal out entirely.
+
+These patients have a 96.5% heart disease rate but present with a completely different risk topology than the majority population. A flat model will never see this.
+
+## The Deliverable
+
+- 1,256 human-readable decision rules across 4 regimes
+- 2,614 lines of standalone if-else prediction code (zero ML dependencies)
+- Full regime analysis with feature importance shifts
+- A prediction system a doctor could actually read and audit
+
+## Full Code & Analysis
+
+Everything is open source — the full pipeline, the unblackboxed rules, the standalone prediction code, and the showdown against standard models (XGBoost, Random Forest, Gradient Boosting, Neural Nets, etc.):
+
+**GitHub: https://github.com/oppressionslayer/playground-heart-disease**
+
+We don't predict. We decompose.# Hyperdimensional Subspace Decomposition — Heart Disease Prediction Unblackboxed
+
+## Approach
+
+Instead of treating this as a flat classification problem, I used hyperdimensional mathematics to decompose the patient population into 4 latent regimes hiding inside the data. Each regime has a fundamentally different risk profile and requires its own specialized prediction logic.
+
+The result: **AUC-ROC 0.953** with every single prediction fully explainable through human-readable if/then rules. No black boxes.
+
+## What I Found
+
+The dataset contains a hidden 4-zone partition defined by two diagnostic features acting as regime selectors:
+
+| Regime | Patients | Heart Disease Rate | Primary Drivers |
+|--------|----------|-------------------|-----------------|
+| Standard | 352,546 (56%) | 17.0% | Chest pain type, Max HR |
+| High Thallium | 200,294 (32%) | 76.5% | ST slope, ST depression |
+| High Vessel | 19,740 (3%) | 70.2% | Age, ST depression |
+| Metabolic | 57,420 (9%) | **96.5%** | Cholesterol, BP, Age |
+
+## The Critical Finding
+
+In the Metabolic regime (9% of patients), chest pain type — the #1 predictor for 87% of the population — drops to #5. The risk becomes metabolic: cholesterol, blood pressure, and age take over. Standard models that average across all patients wash this signal out entirely.
+
+These patients have a 96.5% heart disease rate but present with a completely different risk topology than the majority population. A flat model will never see this.
+
+## The Deliverable
+
+- 1,256 human-readable decision rules across 4 regimes
+- 2,614 lines of standalone if-else prediction code (zero ML dependencies)
+- Full regime analysis with feature importance shifts
+- A prediction system a doctor could actually read and audit
+
+## Full Code & Analysis
+
+Everything is open source — the full pipeline, the unblackboxed rules, the standalone prediction code, and the showdown against standard models (XGBoost, Random Forest, Gradient Boosting, Neural Nets, etc.):
+
+**GitHub: https://github.com/oppressionslayer/playground-heart-disease**
+
+We don't predict. We decompose.# Hyperdimensional Subspace Decomposition — Heart Disease Prediction Unblackboxed
+
+## Approach
+
+Instead of treating this as a flat classification problem, I used hyperdimensional mathematics to decompose the patient population into 4 latent regimes hiding inside the data. Each regime has a fundamentally different risk profile and requires its own specialized prediction logic.
+
+The result: **AUC-ROC 0.953** with every single prediction fully explainable through human-readable if/then rules. No black boxes.
+
+## What I Found
+
+The dataset contains a hidden 4-zone partition defined by two diagnostic features acting as regime selectors:
+
+| Regime | Patients | Heart Disease Rate | Primary Drivers |
+|--------|----------|-------------------|-----------------|
+| Standard | 352,546 (56%) | 17.0% | Chest pain type, Max HR |
+| High Thallium | 200,294 (32%) | 76.5% | ST slope, ST depression |
+| High Vessel | 19,740 (3%) | 70.2% | Age, ST depression |
+| Metabolic | 57,420 (9%) | **96.5%** | Cholesterol, BP, Age |
+
+## The Critical Finding
+
+In the Metabolic regime (9% of patients), chest pain type — the #1 predictor for 87% of the population — drops to #5. The risk becomes metabolic: cholesterol, blood pressure, and age take over. Standard models that average across all patients wash this signal out entirely.
+
+These patients have a 96.5% heart disease rate but present with a completely different risk topology than the majority population. A flat model will never see this.
+
+## The Deliverable
+
+- 1,256 human-readable decision rules across 4 regimes
+- 2,614 lines of standalone if-else prediction code (zero ML dependencies)
+- Full regime analysis with feature importance shifts
+- A prediction system a doctor could actually read and audit
+
+## Full Code & Analysis
+
+Everything is open source — the full pipeline, the unblackboxed rules, the standalone prediction code, and the showdown against standard models (XGBoost, Random Forest, Gradient Boosting, Neural Nets, etc.):
+
+**GitHub: https://github.com/oppressionslayer/playground-heart-disease**
+
+We don't predict. We decompose.# Hyperdimensional Subspace Decomposition — Heart Disease Prediction Unblackboxed
+
+## Approach
+
+Instead of treating this as a flat classification problem, I used hyperdimensional mathematics to decompose the patient population into 4 latent regimes hiding inside the data. Each regime has a fundamentally different risk profile and requires its own specialized prediction logic.
+
+The result: **AUC-ROC 0.953** with every single prediction fully explainable through human-readable if/then rules. No black boxes.
+
+## What I Found
+
+The dataset contains a hidden 4-zone partition defined by two diagnostic features acting as regime selectors:
+
+| Regime | Patients | Heart Disease Rate | Primary Drivers |
+|--------|----------|-------------------|-----------------|
+| Standard | 352,546 (56%) | 17.0% | Chest pain type, Max HR |
+| High Thallium | 200,294 (32%) | 76.5% | ST slope, ST depression |
+| High Vessel | 19,740 (3%) | 70.2% | Age, ST depression |
+| Metabolic | 57,420 (9%) | **96.5%** | Cholesterol, BP, Age |
+
+## The Critical Finding
+
+In the Metabolic regime (9% of patients), chest pain type — the #1 predictor for 87% of the population — drops to #5. The risk becomes metabolic: cholesterol, blood pressure, and age take over. Standard models that average across all patients wash this signal out entirely.
+
+These patients have a 96.5% heart disease rate but present with a completely different risk topology than the majority population. A flat model will never see this.
+
+## The Deliverable
+
+- 1,256 human-readable decision rules across 4 regimes
+- 2,614 lines of standalone if-else prediction code (zero ML dependencies)
+- Full regime analysis with feature importance shifts
+- A prediction system a doctor could actually read and audit
+
+## Full Code & Analysis
+
+Everything is open source — the full pipeline, the unblackboxed rules, the standalone prediction code, and the showdown against standard models (XGBoost, Random Forest, Gradient Boosting, Neural Nets, etc.):
+
+**GitHub: https://github.com/oppressionslayer/playground-heart-disease**
+
+We don't predict. We decompose.# Hyperdimensional Subspace Decomposition — Heart Disease Prediction Unblackboxed
+
+## Approach
+
+Instead of treating this as a flat classification problem, I used hyperdimensional mathematics to decompose the patient population into 4 latent regimes hiding inside the data. Each regime has a fundamentally different risk profile and requires its own specialized prediction logic.
+
+The result: **AUC-ROC 0.953** with every single prediction fully explainable through human-readable if/then rules. No black boxes.
+
+## What I Found
+
+The dataset contains a hidden 4-zone partition defined by two diagnostic features acting as regime selectors:
+
+| Regime | Patients | Heart Disease Rate | Primary Drivers |
+|--------|----------|-------------------|-----------------|
+| Standard | 352,546 (56%) | 17.0% | Chest pain type, Max HR |
+| High Thallium | 200,294 (32%) | 76.5% | ST slope, ST depression |
+| High Vessel | 19,740 (3%) | 70.2% | Age, ST depression |
+| Metabolic | 57,420 (9%) | **96.5%** | Cholesterol, BP, Age |
+
+## The Critical Finding
+
+In the Metabolic regime (9% of patients), chest pain type — the #1 predictor for 87% of the population — drops to #5. The risk becomes metabolic: cholesterol, blood pressure, and age take over. Standard models that average across all patients wash this signal out entirely.
+
+These patients have a 96.5% heart disease rate but present with a completely different risk topology than the majority population. A flat model will never see this.
+
+## The Deliverable
+
+- 1,256 human-readable decision rules across 4 regimes
+- 2,614 lines of standalone if-else prediction code (zero ML dependencies)
+- Full regime analysis with feature importance shifts
+- A prediction system a doctor could actually read and audit
+
+## Full Code & Analysis
+
+Everything is open source — the full pipeline, the unblackboxed rules, the standalone prediction code, and the showdown against standard models (XGBoost, Random Forest, Gradient Boosting, Neural Nets, etc.):
+
+**GitHub: https://github.com/oppressionslayer/playground-heart-disease**
+
+We don't predict. We decompose.# Hyperdimensional Subspace Decomposition — Heart Disease Prediction Unblackboxed
+
+## Approach
+
+Instead of treating this as a flat classification problem, I used hyperdimensional mathematics to decompose the patient population into 4 latent regimes hiding inside the data. Each regime has a fundamentally different risk profile and requires its own specialized prediction logic.
+
+The result: **AUC-ROC 0.953** with every single prediction fully explainable through human-readable if/then rules. No black boxes.
+
+## What I Found
+
+The dataset contains a hidden 4-zone partition defined by two diagnostic features acting as regime selectors:
+
+| Regime | Patients | Heart Disease Rate | Primary Drivers |
+|--------|----------|-------------------|-----------------|
+| Standard | 352,546 (56%) | 17.0% | Chest pain type, Max HR |
+| High Thallium | 200,294 (32%) | 76.5% | ST slope, ST depression |
+| High Vessel | 19,740 (3%) | 70.2% | Age, ST depression |
+| Metabolic | 57,420 (9%) | **96.5%** | Cholesterol, BP, Age |
+
+## The Critical Finding
+
+In the Metabolic regime (9% of patients), chest pain type — the #1 predictor for 87% of the population — drops to #5. The risk becomes metabolic: cholesterol, blood pressure, and age take over. Standard models that average across all patients wash this signal out entirely.
+
+These patients have a 96.5% heart disease rate but present with a completely different risk topology than the majority population. A flat model will never see this.
+
+## The Deliverable
+
+- 1,256 human-readable decision rules across 4 regimes
+- 2,614 lines of standalone if-else prediction code (zero ML dependencies)
+- Full regime analysis with feature importance shifts
+- A prediction system a doctor could actually read and audit
+
+## Full Code & Analysis
+
+Everything is open source — the full pipeline, the unblackboxed rules, the standalone prediction code, and the showdown against standard models (XGBoost, Random Forest, Gradient Boosting, Neural Nets, etc.):
+
+**GitHub: https://github.com/oppressionslayer/playground-heart-disease**
+
+We don't predict. We decompose.# Hyperdimensional Subspace Decomposition — Heart Disease Prediction Unblackboxed
+
+## Approach
+
+Instead of treating this as a flat classification problem, I used hyperdimensional mathematics to decompose the patient population into 4 latent regimes hiding inside the data. Each regime has a fundamentally different risk profile and requires its own specialized prediction logic.
+
+The result: **AUC-ROC 0.953** with every single prediction fully explainable through human-readable if/then rules. No black boxes.
+
+## What I Found
+
+The dataset contains a hidden 4-zone partition defined by two diagnostic features acting as regime selectors:
+
+| Regime | Patients | Heart Disease Rate | Primary Drivers |
+|--------|----------|-------------------|-----------------|
+| Standard | 352,546 (56%) | 17.0% | Chest pain type, Max HR |
+| High Thallium | 200,294 (32%) | 76.5% | ST slope, ST depression |
+| High Vessel | 19,740 (3%) | 70.2% | Age, ST depression |
+| Metabolic | 57,420 (9%) | **96.5%** | Cholesterol, BP, Age |
+
+## The Critical Finding
+
+In the Metabolic regime (9% of patients), chest pain type — the #1 predictor for 87% of the population — drops to #5. The risk becomes metabolic: cholesterol, blood pressure, and age take over. Standard models that average across all patients wash this signal out entirely.
+
+These patients have a 96.5% heart disease rate but present with a completely different risk topology than the majority population. A flat model will never see this.
+
+## The Deliverable
+
+- 1,256 human-readable decision rules across 4 regimes
+- 2,614 lines of standalone if-else prediction code (zero ML dependencies)
+- Full regime analysis with feature importance shifts
+- A prediction system a doctor could actually read and audit
+
+## Full Code & Analysis
+
+Everything is open source — the full pipeline, the unblackboxed rules, the standalone prediction code, and the showdown against standard models (XGBoost, Random Forest, Gradient Boosting, Neural Nets, etc.):
+
+**GitHub: https://github.com/oppressionslayer/playground-heart-disease**
+
+We don't predict. We decompose.# Hyperdimensional Subspace Decomposition — Heart Disease Prediction Unblackboxed
+
+## Approach
+
+Instead of treating this as a flat classification problem, I used hyperdimensional mathematics to decompose the patient population into 4 latent regimes hiding inside the data. Each regime has a fundamentally different risk profile and requires its own specialized prediction logic.
+
+The result: **AUC-ROC 0.953** with every single prediction fully explainable through human-readable if/then rules. No black boxes.
+
+## What I Found
+
+The dataset contains a hidden 4-zone partition defined by two diagnostic features acting as regime selectors:
+
+| Regime | Patients | Heart Disease Rate | Primary Drivers |
+|--------|----------|-------------------|-----------------|
+| Standard | 352,546 (56%) | 17.0% | Chest pain type, Max HR |
+| High Thallium | 200,294 (32%) | 76.5% | ST slope, ST depression |
+| High Vessel | 19,740 (3%) | 70.2% | Age, ST depression |
+| Metabolic | 57,420 (9%) | **96.5%** | Cholesterol, BP, Age |
+
+## The Critical Finding
+
+In the Metabolic regime (9% of patients), chest pain type — the #1 predictor for 87% of the population — drops to #5. The risk becomes metabolic: cholesterol, blood pressure, and age take over. Standard models that average across all patients wash this signal out entirely.
+
+These patients have a 96.5% heart disease rate but present with a completely different risk topology than the majority population. A flat model will never see this.
+
+## The Deliverable
+
+- 1,256 human-readable decision rules across 4 regimes
+- 2,614 lines of standalone if-else prediction code (zero ML dependencies)
+- Full regime analysis with feature importance shifts
+- A prediction system a doctor could actually read and audit
+
+## Full Code & Analysis
+
+Everything is open source — the full pipeline, the unblackboxed rules, the standalone prediction code, and the showdown against standard models (XGBoost, Random Forest, Gradient Boosting, Neural Nets, etc.):
+
+**GitHub: https://github.com/oppressionslayer/playground-heart-disease**
+
+We don't predict. We decompose.# Hyperdimensional Subspace Decomposition — Heart Disease Prediction Unblackboxed
+
+## Approach
+
+Instead of treating this as a flat classification problem, I used hyperdimensional mathematics to decompose the patient population into 4 latent regimes hiding inside the data. Each regime has a fundamentally different risk profile and requires its own specialized prediction logic.
+
+The result: **AUC-ROC 0.953** with every single prediction fully explainable through human-readable if/then rules. No black boxes.
+
+## What I Found
+
+The dataset contains a hidden 4-zone partition defined by two diagnostic features acting as regime selectors:
+
+| Regime | Patients | Heart Disease Rate | Primary Drivers |
+|--------|----------|-------------------|-----------------|
+| Standard | 352,546 (56%) | 17.0% | Chest pain type, Max HR |
+| High Thallium | 200,294 (32%) | 76.5% | ST slope, ST depression |
+| High Vessel | 19,740 (3%) | 70.2% | Age, ST depression |
+| Metabolic | 57,420 (9%) | **96.5%** | Cholesterol, BP, Age |
+
+## The Critical Finding
+
+In the Metabolic regime (9% of patients), chest pain type — the #1 predictor for 87% of the population — drops to #5. The risk becomes metabolic: cholesterol, blood pressure, and age take over. Standard models that average across all patients wash this signal out entirely.
+
+These patients have a 96.5% heart disease rate but present with a completely different risk topology than the majority population. A flat model will never see this.
+
+## The Deliverable
+
+- 1,256 human-readable decision rules across 4 regimes
+- 2,614 lines of standalone if-else prediction code (zero ML dependencies)
+- Full regime analysis with feature importance shifts
+- A prediction system a doctor could actually read and audit
+
+## Full Code & Analysis
+
+Everything is open source — the full pipeline, the unblackboxed rules, the standalone prediction code, and the showdown against standard models (XGBoost, Random Forest, Gradient Boosting, Neural Nets, etc.):
+
+**GitHub: https://github.com/oppressionslayer/playground-heart-disease**
+
+We don't predict. We decompose.# Hyperdimensional Subspace Decomposition — Heart Disease Prediction Unblackboxed
+
+## Approach
+
+Instead of treating this as a flat classification problem, I used hyperdimensional mathematics to decompose the patient population into 4 latent regimes hiding inside the data. Each regime has a fundamentally different risk profile and requires its own specialized prediction logic.
+
+The result: **AUC-ROC 0.953** with every single prediction fully explainable through human-readable if/then rules. No black boxes.
+
+## What I Found
+
+The dataset contains a hidden 4-zone partition defined by two diagnostic features acting as regime selectors:
+
+| Regime | Patients | Heart Disease Rate | Primary Drivers |
+|--------|----------|-------------------|-----------------|
+| Standard | 352,546 (56%) | 17.0% | Chest pain type, Max HR |
+| High Thallium | 200,294 (32%) | 76.5% | ST slope, ST depression |
+| High Vessel | 19,740 (3%) | 70.2% | Age, ST depression |
+| Metabolic | 57,420 (9%) | **96.5%** | Cholesterol, BP, Age |
+
+## The Critical Finding
+
+In the Metabolic regime (9% of patients), chest pain type — the #1 predictor for 87% of the population — drops to #5. The risk becomes metabolic: cholesterol, blood pressure, and age take over. Standard models that average across all patients wash this signal out entirely.
+
+These patients have a 96.5% heart disease rate but present with a completely different risk topology than the majority population. A flat model will never see this.
+
+## The Deliverable
+
+- 1,256 human-readable decision rules across 4 regimes
+- 2,614 lines of standalone if-else prediction code (zero ML dependencies)
+- Full regime analysis with feature importance shifts
+- A prediction system a doctor could actually read and audit
+
+## Full Code & Analysis
+
+Everything is open source — the full pipeline, the unblackboxed rules, the standalone prediction code, and the showdown against standard models (XGBoost, Random Forest, Gradient Boosting, Neural Nets, etc.):
+
+**GitHub: https://github.com/oppressionslayer/playground-heart-disease**
+
+We don't predict. We decompose.# Hyperdimensional Subspace Decomposition — Heart Disease Prediction Unblackboxed
+
+## Approach
+
+Instead of treating this as a flat classification problem, I used hyperdimensional mathematics to decompose the patient population into 4 latent regimes hiding inside the data. Each regime has a fundamentally different risk profile and requires its own specialized prediction logic.
+
+The result: **AUC-ROC 0.953** with every single prediction fully explainable through human-readable if/then rules. No black boxes.
+
+## What I Found
+
+The dataset contains a hidden 4-zone partition defined by two diagnostic features acting as regime selectors:
+
+| Regime | Patients | Heart Disease Rate | Primary Drivers |
+|--------|----------|-------------------|-----------------|
+| Standard | 352,546 (56%) | 17.0% | Chest pain type, Max HR |
+| High Thallium | 200,294 (32%) | 76.5% | ST slope, ST depression |
+| High Vessel | 19,740 (3%) | 70.2% | Age, ST depression |
+| Metabolic | 57,420 (9%) | **96.5%** | Cholesterol, BP, Age |
+
+## The Critical Finding
+
+In the Metabolic regime (9% of patients), chest pain type — the #1 predictor for 87% of the population — drops to #5. The risk becomes metabolic: cholesterol, blood pressure, and age take over. Standard models that average across all patients wash this signal out entirely.
+
+These patients have a 96.5% heart disease rate but present with a completely different risk topology than the majority population. A flat model will never see this.
+
+## The Deliverable
+
+- 1,256 human-readable decision rules across 4 regimes
+- 2,614 lines of standalone if-else prediction code (zero ML dependencies)
+- Full regime analysis with feature importance shifts
+- A prediction system a doctor could actually read and audit
+
+## Full Code & Analysis
+
+Everything is open source — the full pipeline, the unblackboxed rules, the standalone prediction code, and the showdown against standard models (XGBoost, Random Forest, Gradient Boosting, Neural Nets, etc.):
+
+**GitHub: https://github.com/oppressionslayer/playground-heart-disease**
+
+We don't predict. We decompose.# Hyperdimensional Subspace Decomposition — Heart Disease Prediction Unblackboxed
+
+## Approach
+
+Instead of treating this as a flat classification problem, I used hyperdimensional mathematics to decompose the patient population into 4 latent regimes hiding inside the data. Each regime has a fundamentally different risk profile and requires its own specialized prediction logic.
+
+The result: **AUC-ROC 0.953** with every single prediction fully explainable through human-readable if/then rules. No black boxes.
+
+## What I Found
+
+The dataset contains a hidden 4-zone partition defined by two diagnostic features acting as regime selectors:
+
+| Regime | Patients | Heart Disease Rate | Primary Drivers |
+|--------|----------|-------------------|-----------------|
+| Standard | 352,546 (56%) | 17.0% | Chest pain type, Max HR |
+| High Thallium | 200,294 (32%) | 76.5% | ST slope, ST depression |
+| High Vessel | 19,740 (3%) | 70.2% | Age, ST depression |
+| Metabolic | 57,420 (9%) | **96.5%** | Cholesterol, BP, Age |
+
+## The Critical Finding
+
+In the Metabolic regime (9% of patients), chest pain type — the #1 predictor for 87% of the population — drops to #5. The risk becomes metabolic: cholesterol, blood pressure, and age take over. Standard models that average across all patients wash this signal out entirely.
+
+These patients have a 96.5% heart disease rate but present with a completely different risk topology than the majority population. A flat model will never see this.
+
+## The Deliverable
+
+- 1,256 human-readable decision rules across 4 regimes
+- 2,614 lines of standalone if-else prediction code (zero ML dependencies)
+- Full regime analysis with feature importance shifts
+- A prediction system a doctor could actually read and audit
+
+## Full Code & Analysis
+
+Everything is open source — the full pipeline, the unblackboxed rules, the standalone prediction code, and the showdown against standard models (XGBoost, Random Forest, Gradient Boosting, Neural Nets, etc.):
+
+**GitHub: https://github.com/oppressionslayer/playground-heart-disease**
+
+We don't predict. We decompose.# Hyperdimensional Subspace Decomposition — Heart Disease Prediction Unblackboxed
+
+## Approach
+
+Instead of treating this as a flat classification problem, I used hyperdimensional mathematics to decompose the patient population into 4 latent regimes hiding inside the data. Each regime has a fundamentally different risk profile and requires its own specialized prediction logic.
+
+The result: **AUC-ROC 0.953** with every single prediction fully explainable through human-readable if/then rules. No black boxes.
+
+## What I Found
+
+The dataset contains a hidden 4-zone partition defined by two diagnostic features acting as regime selectors:
+
+| Regime | Patients | Heart Disease Rate | Primary Drivers |
+|--------|----------|-------------------|-----------------|
+| Standard | 352,546 (56%) | 17.0% | Chest pain type, Max HR |
+| High Thallium | 200,294 (32%) | 76.5% | ST slope, ST depression |
+| High Vessel | 19,740 (3%) | 70.2% | Age, ST depression |
+| Metabolic | 57,420 (9%) | **96.5%** | Cholesterol, BP, Age |
+
+## The Critical Finding
+
+In the Metabolic regime (9% of patients), chest pain type — the #1 predictor for 87% of the population — drops to #5. The risk becomes metabolic: cholesterol, blood pressure, and age take over. Standard models that average across all patients wash this signal out entirely.
+
+These patients have a 96.5% heart disease rate but present with a completely different risk topology than the majority population. A flat model will never see this.
+
+## The Deliverable
+
+- 1,256 human-readable decision rules across 4 regimes
+- 2,614 lines of standalone if-else prediction code (zero ML dependencies)
+- Full regime analysis with feature importance shifts
+- A prediction system a doctor could actually read and audit
+
+## Full Code & Analysis
+
+Everything is open source — the full pipeline, the unblackboxed rules, the standalone prediction code, and the showdown against standard models (XGBoost, Random Forest, Gradient Boosting, Neural Nets, etc.):
+
+**GitHub: https://github.com/oppressionslayer/playground-heart-disease**
+
+We don't predict. We decompose.# Hyperdimensional Subspace Decomposition — Heart Disease Prediction Unblackboxed
+
+## Approach
+
+Instead of treating this as a flat classification problem, I used hyperdimensional mathematics to decompose the patient population into 4 latent regimes hiding inside the data. Each regime has a fundamentally different risk profile and requires its own specialized prediction logic.
+
+The result: **AUC-ROC 0.953** with every single prediction fully explainable through human-readable if/then rules. No black boxes.
+
+## What I Found
+
+The dataset contains a hidden 4-zone partition defined by two diagnostic features acting as regime selectors:
+
+| Regime | Patients | Heart Disease Rate | Primary Drivers |
+|--------|----------|-------------------|-----------------|
+| Standard | 352,546 (56%) | 17.0% | Chest pain type, Max HR |
+| High Thallium | 200,294 (32%) | 76.5% | ST slope, ST depression |
+| High Vessel | 19,740 (3%) | 70.2% | Age, ST depression |
+| Metabolic | 57,420 (9%) | **96.5%** | Cholesterol, BP, Age |
+
+## The Critical Finding
+
+In the Metabolic regime (9% of patients), chest pain type — the #1 predictor for 87% of the population — drops to #5. The risk becomes metabolic: cholesterol, blood pressure, and age take over. Standard models that average across all patients wash this signal out entirely.
+
+These patients have a 96.5% heart disease rate but present with a completely different risk topology than the majority population. A flat model will never see this.
+
+## The Deliverable
+
+- 1,256 human-readable decision rules across 4 regimes
+- 2,614 lines of standalone if-else prediction code (zero ML dependencies)
+- Full regime analysis with feature importance shifts
+- A prediction system a doctor could actually read and audit
+
+## Full Code & Analysis
+
+Everything is open source — the full pipeline, the unblackboxed rules, the standalone prediction code, and the showdown against standard models (XGBoost, Random Forest, Gradient Boosting, Neural Nets, etc.):
+
+**GitHub: https://github.com/oppressionslayer/playground-heart-disease**
+
+We don't predict. We decompose.
