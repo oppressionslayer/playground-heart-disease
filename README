@@ -209,7 +209,70 @@ Patient comes in
         v
   [Zone Assignment]
   Vessels fluro > 1.5?  x  Thallium > 3.2?
+        |Heart Disease Prediction — Zone-Structured Ensemble
+
+Kaggle Playground Series S6E2 | Public Score: 0.94969
+
+One model? Nah. We split patients into 4 hyperdimensional zones and give each zone its own army of decision trees. Hard zones get more firepower. Easy zones get the express lane. Every probability gets isotonic-calibrated on out-of-bag estimates. Then we average 5 random seeds because variance is the enemy.
+
+No black boxes. 1,275 human-readable IF-THEN rules. A doctor could read them over coffee.
+
+Built on the Williams Structured Random Forest architecture, invented by William Lars Rocha, 2011.
+How It Works
+
+Patient comes in
         |
+        v
+  [Zone Assignment]
+  Vessels fluro > 1.5?  x  Thallium > 3.2?
+        |
+   4 zones (2x2 grid)
+        |
+        v
+  [Adaptive Random Forest per zone]
+  Zone 0: 300 trees, depth 20  (hard zone, full power)
+  Zone 1: 300 trees, depth 20  (hard zone, full power)
+  Zone 2: 300 trees, depth 20  (hard zone, full power)
+  Zone 3:  90 trees, depth 15  (easy zone, express lane)
+        |
+        v
+  [OOB Isotonic Calibration]
+        |
+        v
+  [5-seed averaging]
+        |
+        v
+  Probability of heart disease
+
+The Zones
+Zone 	Vessels 	Thallium 	Patients 	Disease Rate 	Vibe
+0 	low 	low 	352K (56%) 	17% 	Mostly healthy
+1 	low 	high 	200K (32%) 	77% 	Warning signs
+2 	high 	low 	20K (3%) 	70% 	Rare but risky
+3 	high 	high 	57K (9%) 	97% 	Almost certain
+Results
+Version 	Config 	CV AUC 	Public LB
+Standard 	100 trees, depth 15, 1 seed 	0.95180 	0.94792
+Max Power 	300 trees, depth 20, 5 seeds 	0.95131 	0.94969
+Files
+File 	What It Does
+wsrf_opensource_kaggle.ipynb 	Full notebook with outputs — run it, read it, learn from it
+wsrf_opensource_kaggle.py 	Same thing as plain Python if notebooks aren't your thing
+wsrf_maxpower.py 	The 300-tree, 5-seed beast mode submission generator
+doctor_rules_opensource.txt 	1,275 human-readable rules a doctor can actually use
+standalone_predict_opensource.py 	Pure Python predictor — zero ML libraries needed
+submission_maxpower.csv 	The Kaggle submission (0.94969)
+submission_opensource.csv 	Standard config submission
+Run It
+
+# Standard version (notebook or script)
+python3 wsrf_opensource_kaggle.py
+
+# Max power (300 trees x 5 seeds, ~4 minutes)
+python3 wsrf_maxpower.py
+
+Requires: scikit-learn, numpy, pandas. That's it.
+The Key Ideas
    4 zones (2x2 grid)
         |
         v
@@ -273,7 +336,70 @@ Max Power 	300 trees, depth 20, 5 seeds 	0.95131 	0.94969
 Files
 File 	What It Does
 wsrf_opensource_kaggle.ipynb 	Full notebook with outputs — run it, read it, learn from it
+wsrf_opensource_kaggle.pyHeart Disease Prediction — Zone-Structured Ensemble
+
+Kaggle Playground Series S6E2 | Public Score: 0.94969
+
+One model? Nah. We split patients into 4 hyperdimensional zones and give each zone its own army of decision trees. Hard zones get more firepower. Easy zones get the express lane. Every probability gets isotonic-calibrated on out-of-bag estimates. Then we average 5 random seeds because variance is the enemy.
+
+No black boxes. 1,275 human-readable IF-THEN rules. A doctor could read them over coffee.
+
+Built on the Williams Structured Random Forest architecture, invented by William Lars Rocha, 2011.
+How It Works
+
+Patient comes in
+        |
+        v
+  [Zone Assignment]
+  Vessels fluro > 1.5?  x  Thallium > 3.2?
+        |
+   4 zones (2x2 grid)
+        |
+        v
+  [Adaptive Random Forest per zone]
+  Zone 0: 300 trees, depth 20  (hard zone, full power)
+  Zone 1: 300 trees, depth 20  (hard zone, full power)
+  Zone 2: 300 trees, depth 20  (hard zone, full power)
+  Zone 3:  90 trees, depth 15  (easy zone, express lane)
+        |
+        v
+  [OOB Isotonic Calibration]
+        |
+        v
+  [5-seed averaging]
+        |
+        v
+  Probability of heart disease
+
+The Zones
+Zone 	Vessels 	Thallium 	Patients 	Disease Rate 	Vibe
+0 	low 	low 	352K (56%) 	17% 	Mostly healthy
+1 	low 	high 	200K (32%) 	77% 	Warning signs
+2 	high 	low 	20K (3%) 	70% 	Rare but risky
+3 	high 	high 	57K (9%) 	97% 	Almost certain
+Results
+Version 	Config 	CV AUC 	Public LB
+Standard 	100 trees, depth 15, 1 seed 	0.95180 	0.94792
+Max Power 	300 trees, depth 20, 5 seeds 	0.95131 	0.94969
+Files
+File 	What It Does
+wsrf_opensource_kaggle.ipynb 	Full notebook with outputs — run it, read it, learn from it
 wsrf_opensource_kaggle.py 	Same thing as plain Python if notebooks aren't your thing
+wsrf_maxpower.py 	The 300-tree, 5-seed beast mode submission generator
+doctor_rules_opensource.txt 	1,275 human-readable rules a doctor can actually use
+standalone_predict_opensource.py 	Pure Python predictor — zero ML libraries needed
+submission_maxpower.csv 	The Kaggle submission (0.94969)
+submission_opensource.csv 	Standard config submission
+Run It
+
+# Standard version (notebook or script)
+python3 wsrf_opensource_kaggle.py
+
+# Max power (300 trees x 5 seeds, ~4 minutes)
+python3 wsrf_maxpower.py
+
+Requires: scikit-learn, numpy, pandas. That's it.
+The Key Ideas 	Same thing as plain Python if notebooks aren't your thing
 wsrf_maxpower.py 	The 300-tree, 5-seed beast mode submission generator
 doctor_rules_opensource.txt 	1,275 human-readable rules a doctor can actually use
 standalone_predict_opensource.py 	Pure Python predictor — zero ML libraries needed
@@ -418,6 +544,48 @@ Zone 	Vessels 	Thallium 	Patients 	Disease Rate 	Vibe
 2 	high 	low 	20K (3%) 	70% 	Rare but risky
 3 	high 	high 	57K (9%) 	97% 	Almost certain
 Results
+Version 	Config 	CV AUC 	Public LBHeart Disease Prediction — Zone-Structured Ensemble
+
+Kaggle Playground Series S6E2 | Public Score: 0.94969
+
+One model? Nah. We split patients into 4 hyperdimensional zones and give each zone its own army of decision trees. Hard zones get more firepower. Easy zones get the express lane. Every probability gets isotonic-calibrated on out-of-bag estimates. Then we average 5 random seeds because variance is the enemy.
+
+No black boxes. 1,275 human-readable IF-THEN rules. A doctor could read them over coffee.
+
+Built on the Williams Structured Random Forest architecture, invented by William Lars Rocha, 2011.
+How It Works
+
+Patient comes in
+        |
+        v
+  [Zone Assignment]
+  Vessels fluro > 1.5?  x  Thallium > 3.2?
+        |
+   4 zones (2x2 grid)
+        |
+        v
+  [Adaptive Random Forest per zone]
+  Zone 0: 300 trees, depth 20  (hard zone, full power)
+  Zone 1: 300 trees, depth 20  (hard zone, full power)
+  Zone 2: 300 trees, depth 20  (hard zone, full power)
+  Zone 3:  90 trees, depth 15  (easy zone, express lane)
+        |
+        v
+  [OOB Isotonic Calibration]
+        |
+        v
+  [5-seed averaging]
+        |
+        v
+  Probability of heart disease
+
+The Zones
+Zone 	Vessels 	Thallium 	Patients 	Disease Rate 	Vibe
+0 	low 	low 	352K (56%) 	17% 	Mostly healthy
+1 	low 	high 	200K (32%) 	77% 	Warning signs
+2 	high 	low 	20K (3%) 	70% 	Rare but risky
+3 	high 	high 	57K (9%) 	97% 	Almost certain
+Results
 Version 	Config 	CV AUC 	Public LB
 Standard 	100 trees, depth 15, 1 seed 	0.95180 	0.94792
 Max Power 	300 trees, depth 20, 5 seeds 	0.95131 	0.94969
@@ -431,6 +599,90 @@ standalone_predict_opensource.py 	Pure Python predictor — zero ML libraries ne
 submission_maxpower.csv 	The Kaggle submission (0.94969)
 submission_opensource.csv 	Standard config submission
 Run It
+
+# Standard version (notebook or script)
+python3 wsrf_opensource_kaggle.py
+
+# Max power (300 trees x 5 seeds, ~4 minutes)
+python3 wsrf_maxpower.py
+
+Requires: scikit-learn, numpy, pandas. That's it.
+The Key Ideas
+Standard 	100 trees, depth 15, 1 seed 	0.95180 	0.94792
+Max Power 	300 trees, depth 20, 5 seeds 	0.95131 	0.94969
+Files
+File 	What It Does
+wsrf_opensource_kaggle.ipynb 	Full notebook with outputs — run it, read it, learn from it
+wsrf_opensource_kaggle.py 	Same thing as plain Python if notebooks aren't your thing
+wsrf_maxpower.py 	The 300-tree, 5-seed beast mode submission generator
+doctor_rules_opensource.txt 	1,275 human-readable rules a doctor can actually use
+standalone_predict_opensource.py 	Pure Python predictor — zero ML libraries needed
+submission_maxpower.csv 	The Kaggle submission (0.94969)
+submission_opensource.csv 	Standard config submission
+Run ItHeart Disease Prediction — Zone-Structured Ensemble
+
+Kaggle Playground Series S6E2 | Public Score: 0.94969
+
+One model? Nah. We split patients into 4 hyperdimensional zones and give each zone its own army of decision trees. Hard zones get more firepower. Easy zones get the express lane. Every probability gets isotonic-calibrated on out-of-bag estimates. Then we average 5 random seeds because variance is the enemy.
+
+No black boxes. 1,275 human-readable IF-THEN rules. A doctor could read them over coffee.
+
+Built on the Williams Structured Random Forest architecture, invented by William Lars Rocha, 2011.
+How It Works
+
+Patient comes in
+        |
+        v
+  [Zone Assignment]
+  Vessels fluro > 1.5?  x  Thallium > 3.2?
+        |
+   4 zones (2x2 grid)
+        |
+        v
+  [Adaptive Random Forest per zone]
+  Zone 0: 300 trees, depth 20  (hard zone, full power)
+  Zone 1: 300 trees, depth 20  (hard zone, full power)
+  Zone 2: 300 trees, depth 20  (hard zone, full power)
+  Zone 3:  90 trees, depth 15  (easy zone, express lane)
+        |
+        v
+  [OOB Isotonic Calibration]
+        |
+        v
+  [5-seed averaging]
+        |
+        v
+  Probability of heart disease
+
+The Zones
+Zone 	Vessels 	Thallium 	Patients 	Disease Rate 	Vibe
+0 	low 	low 	352K (56%) 	17% 	Mostly healthy
+1 	low 	high 	200K (32%) 	77% 	Warning signs
+2 	high 	low 	20K (3%) 	70% 	Rare but risky
+3 	high 	high 	57K (9%) 	97% 	Almost certain
+Results
+Version 	Config 	CV AUC 	Public LB
+Standard 	100 trees, depth 15, 1 seed 	0.95180 	0.94792
+Max Power 	300 trees, depth 20, 5 seeds 	0.95131 	0.94969
+Files
+File 	What It Does
+wsrf_opensource_kaggle.ipynb 	Full notebook with outputs — run it, read it, learn from it
+wsrf_opensource_kaggle.py 	Same thing as plain Python if notebooks aren't your thing
+wsrf_maxpower.py 	The 300-tree, 5-seed beast mode submission generator
+doctor_rules_opensource.txt 	1,275 human-readable rules a doctor can actually use
+standalone_predict_opensource.py 	Pure Python predictor — zero ML libraries needed
+submission_maxpower.csv 	The Kaggle submission (0.94969)
+submission_opensource.csv 	Standard config submission
+Run It
+
+# Standard version (notebook or script)
+python3 wsrf_opensource_kaggle.py
+
+# Max power (300 trees x 5 seeds, ~4 minutes)
+python3 wsrf_maxpower.py
+
+Requires: scikit-learn, numpy, pandas. That's it.
+The Key Ideas
 
 # Standard version (notebook or script)
 python3 wsrf_opensource_kaggle.py
