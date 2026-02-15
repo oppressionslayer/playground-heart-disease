@@ -9,8 +9,11 @@ lines of code! Nice!
 
 https://wsrf-soduku.netlify.app/
 
-# ABOUT ME: https://www.linkedin.com/in/wlars — I am an Automation Engineer. My background speaks for itself and my unblackbox skillz are quite literally legendary.
+# ABOUT ME: https://www.linkedin.com/in/wlars — 
 
+I am an Automation Engineer. My background speaks for itself and my unblackbox skillz are quite literally legendary.
+
+# SEE https://github.com/oppressionslayer/playground-heart-disease/blob/main/SUBMISSION_NOTES_UPDATED.md 
 
 **Kaggle Playground Series S6E2**
 **Team: Celestials**
