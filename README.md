@@ -2,6 +2,8 @@
 
 https://www.kaggle.com/competitions/playground-series-s6e2
 
+what
+
 Show casing WSRF here, i am not sure if i want to open source or commercial it, but i can unblack box easy. Check out the showcase. More to come soon
 you can see from my linkedin i'm a serious professional and i really have made a serious breakthrough, i think the open source community will benefit the
 most, but let's see what people think, the link below is just a huge showcase of WSRF!! Coming soon! Also see doctor.txt to see the unblackbox of this kaggle! 1200 
