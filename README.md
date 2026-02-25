@@ -7,8 +7,6 @@ you can see from my linkedin i'm a serious professional and i really have made a
 most, but let's see what people think, the link below is just a huge showcase of WSRF!! Coming soon! Also see doctor.txt to see the unblackbox of this kaggle! 1200 
 lines of code! Nice! 
 
-https://wsrf-soduku.netlify.app/
-
 # ABOUT ME: https://www.linkedin.com/in/wlars — 
 
 I am an Automation Engineer. My background speaks for itself and my unblackbox skillz are quite literally legendary.
